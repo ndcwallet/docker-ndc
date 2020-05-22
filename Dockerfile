@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 
 LABEL maintainer "Tanvir Rahaman <tanvirtex@gmail.com>"
-
 ARG NDC_VERSION=1.0.0.1
 
 RUN apt-get update && \
@@ -23,11 +22,7 @@ RUN  apt-get install build-essential libboost-dev libboost-system-dev libboost-f
       
 RUN add-apt-repository -y ppa:bitcoin/bitcoin 
 RUN apt-get update -qq 
-
 RUN apt-get install libdb4.8-dev libdb4.8++-dev -qq
-      
-      
-
 RUN wget  https://github.com/ndcwallet/ndc/releases/download/v1.0.0.1/ubuntu-18_daemon 
 
 RUN mv ubuntu-18_daemon ndcd
@@ -35,10 +30,8 @@ RUN chmod +x ndcd
 RUN mv ndcd /usr/local/bin/ 
 
 VOLUME ["/.ndc"]
-
 EXPOSE 17799 17798
 
 COPY ["bin", "/usr/local/bin/"]
 COPY ["docker-entrypoint.sh", "/usr/local/bin/"]
 ENTRYPOINT ["docker-entrypoint.sh"]
-
