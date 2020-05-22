@@ -28,14 +28,16 @@ RUN apt-get install libdb4.8-dev libdb4.8++-dev -qq
       
       
 
-RUN wget  https://github.com/ndcwallet/ndc/releases/download/v1.0.0.1/ubuntu-18_daemon  && mv ubuntu-18_daemon  ~/ndcd
-  
+RUN wget  https://github.com/ndcwallet/ndc/releases/download/v1.0.0.1/ubuntu-18_daemon 
+
+RUN mv ubuntu-18_daemon ndcd
+RUN chmod +x ndcd
 RUN mv ndcd /usr/local/bin/ 
-RUN rm -rf ndcd /root/.gnupg/ 
+RUN rm  ndcd 
     
 
 
-VOLUME ["/ndc"]
+VOLUME ["/.ndc"]
 
 EXPOSE 17799 17798
 
