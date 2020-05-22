@@ -33,9 +33,6 @@ RUN wget  https://github.com/ndcwallet/ndc/releases/download/v1.0.0.1/ubuntu-18_
 RUN mv ubuntu-18_daemon ndcd
 RUN chmod +x ndcd
 RUN mv ndcd /usr/local/bin/ 
-RUN rm  ndcd 
-    
-
 
 VOLUME ["/.ndc"]
 
