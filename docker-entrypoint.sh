@@ -11,4 +11,4 @@ cat /.ndc/ndc.conf
 echo ""
 echo "################################################"
 
-exec ndcd -datadir=/ndc -conf=/.ndc/ndc.conf -printtoconsole "$@"
+exec ndcd -datadir=/.ndc -conf=/.ndc/ndc.conf -printtoconsole "$@"
