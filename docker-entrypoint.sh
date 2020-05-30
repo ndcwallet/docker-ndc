@@ -7,8 +7,8 @@ echo "################################################"
 echo "# Configuration used: /.ndc/ndc.conf  #"
 echo "################################################"
 echo ""
-cat /.ndc/ndc.conf
+cat /root/.ndc/ndc.conf
 echo ""
 echo "################################################"
 
-exec ndcd -datadir=/.ndc -conf=/.ndc/ndc.conf -printtoconsole "$@"
+sh ./ndcd -d -datadir=/root/.ndc -conf=/root/.ndc/ndc.conf 
